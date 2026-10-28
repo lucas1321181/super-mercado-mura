@@ -115,19 +115,29 @@ console.log(produtosLocalStorage)
 // 0 - Colocar tudo isso em um escutador de evento / função
 
 // 1 - Pegar os valores digitados na tela e colocar em variaveis
-const nomeProdutoDigitado = document.getElementById("nome").value
-const precoProdutoDigitado = Number(document.getElementById("preco").value)
-const categoriaProdutoDigitado = document.getElementById("categoria").value
+const nomeProdutoDigitado = document.getElementById("Name").value
+const precoProdutoDigitado = Number(document.getElementById("Preco").value)
+const categoriaProdutoDigitado = document.getElementById("Categoria").value
 
 // 2 - Criar um objeto com esses valores
 
+ const novoProduto = {
+        nome: nomeProdutoDigitado,
+        preco: precoProdutoDigitado,
+        categoria: categoriaProdutoDigitado
+    }
+
 // 3 - Pegar os valores que estão no local storage (transformando eles em json)
+
+const produtosSalvos = JSON.parse(localStorage.getItem("Produtos")) || []
 
 // 4 - usar o .push para colocar os valores nesse json
 
+   produtosSalvos.push(novoProduto)
+
 // 5 - Salvar o novo json no local storage
 
-
+ localStorage.setItem("Produtos", JSON.stringify(produtosSalvos))
 
 // Read
 const listaProdutos = document.getElementById("lista-produtos")
