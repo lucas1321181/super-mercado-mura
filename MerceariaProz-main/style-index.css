@@ -1,0 +1,251 @@
+
+/* ===== CONFIGURAÇÃO GERAL ===== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+   font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+    background-image: url('https://i.pinimg.com/originals/e3/82/d0/e382d08fd1a11c616138719a42d04b82.jpg');
+    color: #25231F;
+      background-size: cover;
+}
+
+
+/* ===== MENU LATERAL ===== */
+
+.menu-lateral {
+    position: fixed;
+    left: 0;
+    top: 0;
+
+    width: 65px;
+    height: 100vh;
+
+    background-color: #25231F;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    transition: width 0.3s ease;
+    z-index: 100;
+}
+
+/* Expandir menu */
+
+.menu-lateral:hover {
+    width: 220px;
+}
+
+/* Ícone do menu */
+
+.menu-icone {
+    color: white;
+    font-size: 28px;
+    padding: 18px;
+    min-width: 65px;
+    cursor: pointer;
+}
+
+/* Opções do menu */
+
+.menu-opcoes {
+    display: flex;
+    flex-direction: column;
+
+    padding: 15px;
+    gap: 15px;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.menu-lateral:hover .menu-opcoes {
+    opacity: 1;
+}
+
+/* Links */
+
+.menu-opcoes a {
+    display: block;
+
+    background-color: #9E3026;
+    color: white;
+
+    padding: 12px;
+    border-radius: 6px;
+
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.menu-opcoes a:hover {
+    background-color: #76231C;
+}
+
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+
+.pagina-principal {
+    margin-left: 65px;
+    padding: 40px;
+
+    transition: margin-left 0.3s ease;
+}
+
+/* Página acompanha a expansão do menu */
+
+.menu-lateral:hover + .pagina-principal {
+    margin-left: 220px;
+}
+
+
+/* ===== APRESENTAÇÃO ===== */
+
+.apresentacao {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    text-align: center;
+
+    margin-bottom: 35px;
+    padding: 25px;
+}
+h1 {
+      display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 16px;
+
+    background-color: rgb(0, 0, 0);
+    border: 1px solid #000000;
+    border-radius: 9px;
+      box-shadow: 20px 15px 5px rgba(0, 0, 0, 0.632);
+    min-height: 10px;
+}
+
+.descricao-pizzaria {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 16px;
+
+    background-color: rgb(148, 81, 10);
+    border: 1px solid #000000;
+    border-radius: 9px;
+      box-shadow: 20px 15px 5px rgba(0, 0, 0, 0.632);
+    min-height: 10px;
+
+}
+.apresentacao h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    color: #9E3026;
+}
+
+.apresentacao p {
+    font-size: 17px;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+
+/* ===== LISTA DE PRODUTOS ===== */
+
+.lista-produtos {
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 260px));
+
+    justify-content: center;
+    gap: 20px;
+
+    padding: 15px;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+
+/* ===== CARDS ===== */
+
+.lista-produtos article {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+
+    padding: 16px;
+
+    background-color: rgb(130, 128, 128);
+    border: 1px solid #D8CBB9;
+    border-radius: 10px;
+    box-shadow: 20px 25px 5px rgba(0, 0, 0, 0.632);
+    
+    min-height: 120px;
+
+    transition: transform 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+
+.lista-produtos article:hover {
+    transform: scale(0.95);
+}
+
+.lista-produtos article h3 {
+    font-size: 17px;
+}
+
+.lista-produtos article p {
+    font-size: 14px;
+}
+
+
+/* ===== RESPONSIVIDADE ===== */
+
+@media (max-width: 900px) {
+
+    .lista-produtos {
+        grid-template-columns: repeat(2, minmax(0, 260px));
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .pagina-principal {
+        padding: 20px;
+    }
+
+    .apresentacao {
+        padding: 15px;
+    }
+
+    .apresentacao h1 {
+        font-size: 30px;
+    }
+
+    .lista-produtos {
+        grid-template-columns: minmax(0, 280px);
+    }
+
+    /* Mantém o menu compacto em telas pequenas */
+
+    .menu-lateral:hover + .pagina-principal {
+        margin-left: 65px;
+    }
+
+}

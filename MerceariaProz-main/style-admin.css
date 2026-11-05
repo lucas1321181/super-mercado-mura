@@ -1,0 +1,335 @@
+body {
+ font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+    background-image: url('https://i.redd.it/tz0ptaro6iyd1.jpg');
+    color: #25231F;
+      background-size: cover;
+}
+
+
+/* ===== MENU LATERAL E EFEITO DE EXPANSÃO ===== */
+
+.pagina-principal {
+    margin-left: 65px;
+    padding: 40px;
+    transition: margin-left 0.3s ease;
+}
+
+.menu-lateral:hover + .pagina-principal {
+    margin-left: 220px;
+}
+
+/* ===== CABEÇALHO ===== */
+
+.cabecalho-gerenciamento {
+    margin-bottom: 35px;
+}
+
+.cabecalho-gerenciamento h1 {
+    color: #9E3026;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.cabecalho-gerenciamento p {
+    color: #625B52;
+}
+
+/* ===== MENU LATERAL ===== */
+
+.menu-lateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 65px;
+    height: 100vh;
+    background-color: #25231F;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    z-index: 100;
+}
+
+.menu-lateral:hover {
+    width: 220px;
+}
+
+.menu-icone {
+    color: white;
+    font-size: 28px;
+    padding: 18px;
+    cursor: pointer;
+    min-width: 65px;
+}
+
+.menu-opcoes {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.menu-lateral:hover .menu-opcoes {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-opcoes a {
+    display: block;
+    background-color: #9E3026;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.menu-opcoes a:hover {
+    background-color: #76231C;
+}
+
+/* A página acompanha a expansão do menu */
+
+.pagina-principal {
+    margin-left: 65px;
+    transition: margin-left 0.3s ease;
+}
+
+.menu-lateral:hover + .pagina-principal {
+    margin-left: 220px;
+}
+
+/* ===== ÁREA DE CADASTRO ===== */
+
+.area-cadastro {
+    background-color: rgb(167, 166, 166);
+    padding: 30px;
+    border: 1px solid #D8CBB9;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 20px 15px 5px rgba(0, 0, 0, 0.632);
+}
+
+.area-cadastro h2,
+.area-tabela h2 {
+    color: #25231F;
+    margin-bottom: 25px;
+}
+
+#formCadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo label {
+    font-weight: bold;
+    color: #25231F;
+}
+
+.campo input {
+    padding: 13px;
+    border: 1px solid #D8CBB9;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+
+.campo input:focus {
+    border-color: #9E3026;
+}
+
+.botao-cadastrar {
+    background-color: #9E3026;
+    color: white;
+    padding: 13px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.botao-cadastrar:hover {
+    background-color: #76231C;
+}
+/* ===== CADASTRO COMPACTO ===== */
+
+.area-cadastro {
+    max-width: 650px;
+    padding: 22px;
+    margin-bottom: 30px;
+      box-shadow: 20px 15px 5px rgba(0, 0, 0, 0.632);
+}
+
+.area-cadastro h2,
+.area-tabela h2 {
+    font-size: 21px;
+    margin-bottom: 18px;
+}
+
+#formCadastro {
+    gap: 14px;
+}
+
+.campo {
+    gap: 6px;
+}
+
+.campo input {
+    padding: 10px;
+    font-size: 14px;
+}
+
+.botao-cadastrar {
+    padding: 11px;
+    max-width: 220px;
+}
+/* ===== TABELA DE PRODUTOS ===== */
+
+.area-tabela {
+    background-color: rgb(135, 133, 133);
+    padding: 30px;
+    border: 1px solid #D8CBB9;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+
+.tabela-produtos {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabela-produtos th,
+.tabela-produtos td {
+    padding: 16px;
+    border-bottom: 1px solid #E5DDD2;
+}
+
+.tabela-produtos th {
+    background-color: #25231F;
+    color: white;
+}
+
+.tabela-produtos tbody tr:hover {
+    background-color: #F5EBDD;
+}
+/* ===== TABELA COMPACTA ===== */
+
+.area-tabela {
+    max-width: 900px;
+    padding: 22px;
+}
+
+.tabela-produtos {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.tabela-produtos th,
+.tabela-produtos td {
+    padding: 12px;
+    font-size: 14px;
+}
+
+/* Largura das colunas */
+
+.tabela-produtos th:nth-child(1),
+.tabela-produtos td:nth-child(1) {
+    width: 70px;
+}
+
+.tabela-produtos th:nth-child(2),
+.tabela-produtos td:nth-child(2) {
+    width: auto;
+}
+
+.tabela-produtos th:nth-child(3),
+.tabela-produtos td:nth-child(3) {
+    width: 190px;
+}
+
+/* Botões menores */
+
+.acoes {
+    display: flex;
+    gap: 7px;
+}
+
+.botao-editar,
+.botao-excluir {
+    padding: 7px 11px;
+    font-size: 12px;
+}
+/* ===== BOTÕES DE AÇÃO ===== */
+
+.acoes {
+    display: flex;
+    gap: 10px;
+}
+
+.botao-editar {
+    background-color: #2878B5;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.botao-editar:hover {
+    background-color: #1D5C8C;
+}
+
+.botao-excluir {
+    background-color: #C0392B;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.botao-excluir:hover {
+    background-color: #922B21;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+@media (max-width: 600px) {
+    .pagina-principal {
+        padding: 20px;
+    }
+
+    .menu-lateral:hover + .pagina-principal {
+        margin-left: 65px;
+    }
+
+    .area-cadastro,
+    .area-tabela {
+        padding: 18px;
+    }
+
+    .tabela-produtos th,
+    .tabela-produtos td {
+        padding: 10px;
+    }
+
+    .acoes {
+        flex-direction: column;
+    }
+}
